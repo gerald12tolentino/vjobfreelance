@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="logo1.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <script src="https://kit.fontawesome.com/7c9c0566a0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="modal.css">
+    <title>VJOB</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <button id='Settings' title="Settings">
+      <i class="fa fa-cog "></i>         
+  </button>
+    <div id="root"></div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+      <span class="close" >&times;</span>
+      <h1>Input and Output Devices</h1>
+        <div class="select">
+          <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+      </div>
+      <div class="select">
+          <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
+      </div>
+      <div class="select">
+          <label for="videoSource">Video source: </label><select id="videoSource"></select>
+      </div>
+    </div>
+    </div>
+    <script>
+    
+	// When the user clicks the button, open the modal 
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("Settings");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = async () => {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = async () => {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = async () => {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    </script>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script src="./device.js" async></script>
+  </body>
+</html>
